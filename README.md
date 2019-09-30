@@ -6,7 +6,7 @@
 ## Dependency
 * Requires p5js
 ## Usage
-* 
+* This project was created to help me buff up my programming abilities as well as my ability to make a physical simulation using existing physics equations
 ## Recent Changes
 * Rewrote lines in the applyForce() method in planets.js to make forces apply themselves at a lower rate.
 ## Future Plans
