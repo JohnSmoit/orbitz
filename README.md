@@ -11,6 +11,10 @@
 * Rewrote lines in the applyForce() method in planets.js to make forces apply themselves at a lower rate.
 ## Future Plans
 * Add ability to create planets.
+  - upon clicking on a planet, a window is brought up allowing velocity, mass, and size to be calculated.
 * Add ability to customize gravitational force of a planet as well as make stationary.
+  - Gravity will be calculated based on the mass.
 * Add collision to the planets.
+  - collisions will include some amount of elasticity.
 * Add some artistic elements to make simulation easier to look at.
+  - different planet texture, background, and other visual tweaks.
