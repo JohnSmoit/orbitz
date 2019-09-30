@@ -21,10 +21,24 @@ class planet {
     // let distance = sqrt((distanceX * distanceX) + (distanceY * distanceY));
     let distance = sqrt((distanceX * distanceX) + (distanceY * distanceY));
     let forceGravity = gravity * ((this.mass * mass) / (distance * distance));
-    let forceGravityX = forceGravity * cos(this.rotation);
-    let forceGravityY = forceGravity * sin(this.rotation);
-    this.acceleration.x = forceGravityX / this.mass;
-    this.acceleration.y = forceGravityY / this.mass;
+    let forceGravityX;
+    let forceGravityY;
+    if (this.rotation > 90 && this.rotation <= 180) {
+      forceGravityX = forceGravity * cos(this.rotation);
+      forceGravityY = forceGravity * -sin(this.rotation);
+    }
+    else if (this.rotation > 180 && this.rotation <= 270) {
+      forceGravityX = forceGravity * -cos(this.rotation);
+      forceGravityY = forceGravity * -sin(this.rotation);
+    }
+    else if (this.rotation > 270 && this.rotation <= 360) {
+      forceGravityX = forceGravity * -cos(this.rotation);
+      forceGravityY = forceGravity * sin(this.rotation);
+    }
+    else {
+      forceGravityX = forceGravity * cos(this.rotation);
+      forceGravityY = forceGravity * sin(this.rotation);
+    }
     /*if (distanceX > mass) {
       forceGravityX = gravity * ((this.mass * mass) / (distanceX * distanceX));
     }
@@ -36,11 +50,9 @@ class planet {
     }
     else {
       forceGravityY = gravity * ((this.mass * mass) / (distanceY * -distanceY));
-    }
+    }*/
     this.acceleration.x = forceGravityX / this.mass;
-    this.acceleration.y = forceGravityY / this.mass;*/
-    //print(forceGravityX + ", " + forceGravityY);
-    //print(forceGravityX + ", " + forceGravityY);
+    this.acceleration.y = forceGravityY / this.mass;
 
   }
   display() {
